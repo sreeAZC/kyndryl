@@ -1,27 +1,18 @@
-pipeline {
+ pipeline {
+        agent any
 
-    agent any
         stages {
-                stage('build') {
+                stage('create image') {
                         steps {
-                                sh 'echo "Building application"'
+                                sh 'docker build -t pipeimage .'
                         }
                 
                      }
-
-                  stage('test') {
+               stage('create container') {
                         steps {
-                                sh 'echo "test application" '
+                                sh 'docker run -dit --name -p 3000:80 kyndryl pipeimage'
                         }
                 
                      }
-
-                stage('deploy') {
-                        steps {
-                                sh 'echo "deploying application" '
-                        }
-                
-                     }
-
-    }
+                }
        }
