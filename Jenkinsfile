@@ -10,7 +10,7 @@
                      }
                stage('create container') {
                         steps {
-                                sh 'docker run -dit --name Jen-docker-p -p 3000:80 kyndryl pipeimage'
+                                sh 'docker run -dit --name Jen-docker-p -p 3000:80 pipeimage'
                         }
                 
                      }
