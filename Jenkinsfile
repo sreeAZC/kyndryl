@@ -10,7 +10,7 @@
                      }
                stage('create container') {
                         steps {
-                                sh 'docker run -dit --name Jen-docker-p1 -p 4000:80 pipeimage'
+                                sh 'docker run -dit --name Jen-docker-p2 -p 4002:80 pipeimage'
                         }
                 
                      }
